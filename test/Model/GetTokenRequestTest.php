@@ -1,6 +1,6 @@
 <?php
 /**
- * ReportAutoloadVasTest
+ * GetTokenRequestTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Swagger\Client;
 
 /**
- * ReportAutoloadVasTest Class Doc Comment
+ * GetTokenRequestTest Class Doc Comment
  *
  * @category    Class
- * @description ReportAutoloadVas
+ * @description GetTokenRequest
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ReportAutoloadVasTest extends \PHPUnit_Framework_TestCase
+class GetTokenRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,44 +69,30 @@ class ReportAutoloadVasTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ReportAutoloadVas"
+     * Test "GetTokenRequest"
      */
-    public function testReportAutoloadVas()
+    public function testGetTokenRequest()
     {
     }
 
     /**
-     * Test attribute "activated"
+     * Test attribute "client_id"
      */
-    public function testPropertyActivated()
+    public function testPropertyClientId()
     {
     }
 
     /**
-     * Test attribute "active"
+     * Test attribute "client_secret"
      */
-    public function testPropertyActive()
+    public function testPropertyClientSecret()
     {
     }
 
     /**
-     * Test attribute "error"
+     * Test attribute "grant_type"
      */
-    public function testPropertyError()
-    {
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
+    public function testPropertyGrantType()
     {
     }
 }

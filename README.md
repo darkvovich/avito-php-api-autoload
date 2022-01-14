@@ -56,20 +56,92 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\Client\Api\AccessApi(
+// Configure OAuth2 access token for authorization: AuthorizationCode
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: ClientCredentials
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new Swagger\Client\Api\AutoloadApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$grant_type = "client_credentials"; // string | Тип OAuth flow – строка client_credentials
-$client_id = "client_id_example"; // string | 
-$client_secret = "client_secret_example"; // string | 
+$user_id = 789; // int | Номер пользователя в Личном кабинете Авито
+$ad_id = "ad_id_example"; // string | Идентификатор объявления из XML
+$authorization = "authorization_example"; // string | Токен для авторизации
 
 try {
-    $result = $apiInstance->getAccessToken($grant_type, $client_id, $client_secret);
+    $result = $apiInstance->getAutoloadItemInfo($user_id, $ad_id, $authorization);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccessApi->getAccessToken: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AutoloadApi->getAutoloadItemInfo: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure OAuth2 access token for authorization: AuthorizationCode
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: ClientCredentials
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new Swagger\Client\Api\AutoloadApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$user_id = 789; // int | Номер пользователя в Личном кабинете Авито
+$authorization = "authorization_example"; // string | Токен для авторизации
+
+try {
+    $result = $apiInstance->getLastReport($user_id, $authorization);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AutoloadApi->getLastReport: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure OAuth2 access token for authorization: AuthorizationCode
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: ClientCredentials
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new Swagger\Client\Api\AutoloadApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$user_id = 789; // int | Номер пользователя в Личном кабинете Авито
+$report_id = 56; // int | Идентификатор отчета
+$authorization = "authorization_example"; // string | Токен для авторизации
+
+try {
+    $result = $apiInstance->getReportById($user_id, $report_id, $authorization);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AutoloadApi->getReportById: ', $e->getMessage(), PHP_EOL;
+}
+
+// Configure OAuth2 access token for authorization: AuthorizationCode
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure OAuth2 access token for authorization: ClientCredentials
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$apiInstance = new Swagger\Client\Api\AutoloadApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$user_id = 789; // int | Номер пользователя в Личном кабинете Авито
+$authorization = "authorization_example"; // string | Токен для авторизации
+$per_page = 56; // int | Количество ресурсов на страницу
+$page = 56; // int | Номер страницы
+
+try {
+    $result = $apiInstance->getReports($user_id, $authorization, $per_page, $page);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AutoloadApi->getReports: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -80,9 +152,6 @@ All URIs are relative to *https://api.avito.ru/*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccessApi* | [**getAccessToken**](docs/Api/AccessApi.md#getaccesstoken) | **GET** /token | Получение access token
-*ApplicationAccessApi* | [**getAccessTokenAuthorizationCode**](docs/Api/ApplicationAccessApi.md#getaccesstokenauthorizationcode) | **GET** /token‎ | Получение access token
-*ApplicationAccessApi* | [**refreshAccessTokenAuthorizationCode**](docs/Api/ApplicationAccessApi.md#refreshaccesstokenauthorizationcode) | **GET** /token‎‎ | Обновление access token
 *AutoloadApi* | [**getAutoloadItemInfo**](docs/Api/AutoloadApi.md#getautoloaditeminfo) | **GET** /autoload/v1/accounts/{user_id}/items/{ad_id}/ | Получение информации о выгрузке объявления
 *AutoloadApi* | [**getLastReport**](docs/Api/AutoloadApi.md#getlastreport) | **GET** /autoload/v1/accounts/{user_id}/reports/last_report/ | Получение данных последнего актуального отчета
 *AutoloadApi* | [**getReportById**](docs/Api/AutoloadApi.md#getreportbyid) | **GET** /autoload/v1/accounts/{user_id}/reports/{reportId}/ | Получение данных отчета по ID
@@ -93,18 +162,18 @@ Class | Method | HTTP request | Description
  - [ErrorAutoload](docs/Model/ErrorAutoload.md)
  - [ErrorAutoloadError](docs/Model/ErrorAutoloadError.md)
  - [FieldError](docs/Model/FieldError.md)
+ - [GetTokenOAuthRequest](docs/Model/GetTokenOAuthRequest.md)
+ - [GetTokenRequest](docs/Model/GetTokenRequest.md)
  - [InlineResponse200](docs/Model/InlineResponse200.md)
  - [InlineResponse2001](docs/Model/InlineResponse2001.md)
- - [InlineResponse2002](docs/Model/InlineResponse2002.md)
- - [InlineResponse2003](docs/Model/InlineResponse2003.md)
- - [InlineResponse2004](docs/Model/InlineResponse2004.md)
  - [ItemInfoAutoload](docs/Model/ItemInfoAutoload.md)
  - [ItemInfoAutoloadFeeInfo](docs/Model/ItemInfoAutoloadFeeInfo.md)
  - [ItemInfoErrorAutoload](docs/Model/ItemInfoErrorAutoload.md)
  - [MetaAutoload](docs/Model/MetaAutoload.md)
+ - [RefreshRequest](docs/Model/RefreshRequest.md)
  - [ReportAutoload](docs/Model/ReportAutoload.md)
  - [ReportAutoloadAds](docs/Model/ReportAutoloadAds.md)
- - [ReportAutoloadFeePackages](docs/Model/ReportAutoloadFeePackages.md)
+ - [ReportAutoloadListingFee](docs/Model/ReportAutoloadListingFee.md)
  - [ReportAutoloadMessages](docs/Model/ReportAutoloadMessages.md)
  - [ReportAutoloadStatuses](docs/Model/ReportAutoloadStatuses.md)
  - [ReportAutoloadStatusesAvito](docs/Model/ReportAutoloadStatusesAvito.md)

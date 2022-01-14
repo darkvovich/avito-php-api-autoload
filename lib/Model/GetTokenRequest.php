@@ -1,6 +1,6 @@
 <?php
 /**
- * ReportCollectionAutoloadInner
+ * GetTokenRequest
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ReportCollectionAutoloadInner Class Doc Comment
+ * GetTokenRequest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
+class GetTokenRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ReportCollectionAutoload_inner';
+    protected static $swaggerModelName = 'GetTokenRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,14 +56,9 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'export_success' => 'bool',
-'finished_at' => '\DateTime',
-'id' => 'int',
-'import_success' => 'bool',
-'report_status' => 'string',
-'started_at' => '\DateTime',
-'stat' => 'object',
-'status' => 'string'    ];
+        'client_id' => 'string',
+'client_secret' => 'string',
+'grant_type' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,14 +66,9 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'export_success' => null,
-'finished_at' => 'date-time',
-'id' => null,
-'import_success' => null,
-'report_status' => null,
-'started_at' => 'date-time',
-'stat' => null,
-'status' => null    ];
+        'client_id' => null,
+'client_secret' => null,
+'grant_type' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -107,14 +97,9 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'export_success' => 'export_success',
-'finished_at' => 'finished_at',
-'id' => 'id',
-'import_success' => 'import_success',
-'report_status' => 'report_status',
-'started_at' => 'started_at',
-'stat' => 'stat',
-'status' => 'status'    ];
+        'client_id' => 'client_id',
+'client_secret' => 'client_secret',
+'grant_type' => 'grant_type'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -122,14 +107,9 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'export_success' => 'setExportSuccess',
-'finished_at' => 'setFinishedAt',
-'id' => 'setId',
-'import_success' => 'setImportSuccess',
-'report_status' => 'setReportStatus',
-'started_at' => 'setStartedAt',
-'stat' => 'setStat',
-'status' => 'setStatus'    ];
+        'client_id' => 'setClientId',
+'client_secret' => 'setClientSecret',
+'grant_type' => 'setGrantType'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -137,14 +117,9 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'export_success' => 'getExportSuccess',
-'finished_at' => 'getFinishedAt',
-'id' => 'getId',
-'import_success' => 'getImportSuccess',
-'report_status' => 'getReportStatus',
-'started_at' => 'getStartedAt',
-'stat' => 'getStat',
-'status' => 'getStatus'    ];
+        'client_id' => 'getClientId',
+'client_secret' => 'getClientSecret',
+'grant_type' => 'getGrantType'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -204,14 +179,9 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['export_success'] = isset($data['export_success']) ? $data['export_success'] : null;
-        $this->container['finished_at'] = isset($data['finished_at']) ? $data['finished_at'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['import_success'] = isset($data['import_success']) ? $data['import_success'] : null;
-        $this->container['report_status'] = isset($data['report_status']) ? $data['report_status'] : null;
-        $this->container['started_at'] = isset($data['started_at']) ? $data['started_at'] : null;
-        $this->container['stat'] = isset($data['stat']) ? $data['stat'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['client_id'] = isset($data['client_id']) ? $data['client_id'] : null;
+        $this->container['client_secret'] = isset($data['client_secret']) ? $data['client_secret'] : null;
+        $this->container['grant_type'] = isset($data['grant_type']) ? $data['grant_type'] : 'client_credentials';
     }
 
     /**
@@ -223,17 +193,14 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['finished_at'] === null) {
-            $invalidProperties[] = "'finished_at' can't be null";
+        if ($this->container['client_id'] === null) {
+            $invalidProperties[] = "'client_id' can't be null";
         }
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
+        if ($this->container['client_secret'] === null) {
+            $invalidProperties[] = "'client_secret' can't be null";
         }
-        if ($this->container['started_at'] === null) {
-            $invalidProperties[] = "'started_at' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
+        if ($this->container['grant_type'] === null) {
+            $invalidProperties[] = "'grant_type' can't be null";
         }
         return $invalidProperties;
     }
@@ -251,193 +218,73 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets export_success
-     *
-     * @return bool
-     */
-    public function getExportSuccess()
-    {
-        return $this->container['export_success'];
-    }
-
-    /**
-     * Sets export_success
-     *
-     * @param bool $export_success Успешно ли прошла выгрузка объявления на сайте
-     *
-     * @return $this
-     */
-    public function setExportSuccess($export_success)
-    {
-        $this->container['export_success'] = $export_success;
-
-        return $this;
-    }
-
-    /**
-     * Gets finished_at
-     *
-     * @return \DateTime
-     */
-    public function getFinishedAt()
-    {
-        return $this->container['finished_at'];
-    }
-
-    /**
-     * Sets finished_at
-     *
-     * @param \DateTime $finished_at Время окончания выгрузки объявлений на сайт
-     *
-     * @return $this
-     */
-    public function setFinishedAt($finished_at)
-    {
-        $this->container['finished_at'] = $finished_at;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param int $id ID отчета
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets import_success
-     *
-     * @return bool
-     */
-    public function getImportSuccess()
-    {
-        return $this->container['import_success'];
-    }
-
-    /**
-     * Sets import_success
-     *
-     * @param bool $import_success Успешно ли прошел импорт файла
-     *
-     * @return $this
-     */
-    public function setImportSuccess($import_success)
-    {
-        $this->container['import_success'] = $import_success;
-
-        return $this;
-    }
-
-    /**
-     * Gets report_status
+     * Gets client_id
      *
      * @return string
      */
-    public function getReportStatus()
+    public function getClientId()
     {
-        return $this->container['report_status'];
+        return $this->container['client_id'];
     }
 
     /**
-     * Sets report_status
+     * Sets client_id
      *
-     * @param string $report_status Сокращенный статус обработки отчета
+     * @param string $client_id client_id
      *
      * @return $this
      */
-    public function setReportStatus($report_status)
+    public function setClientId($client_id)
     {
-        $this->container['report_status'] = $report_status;
+        $this->container['client_id'] = $client_id;
 
         return $this;
     }
 
     /**
-     * Gets started_at
-     *
-     * @return \DateTime
-     */
-    public function getStartedAt()
-    {
-        return $this->container['started_at'];
-    }
-
-    /**
-     * Sets started_at
-     *
-     * @param \DateTime $started_at Время создания отчета
-     *
-     * @return $this
-     */
-    public function setStartedAt($started_at)
-    {
-        $this->container['started_at'] = $started_at;
-
-        return $this;
-    }
-
-    /**
-     * Gets stat
-     *
-     * @return object
-     */
-    public function getStat()
-    {
-        return $this->container['stat'];
-    }
-
-    /**
-     * Sets stat
-     *
-     * @param object $stat Суммарная статистика по объявлению в данном отчете
-     *
-     * @return $this
-     */
-    public function setStat($stat)
-    {
-        $this->container['stat'] = $stat;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
+     * Gets client_secret
      *
      * @return string
      */
-    public function getStatus()
+    public function getClientSecret()
     {
-        return $this->container['status'];
+        return $this->container['client_secret'];
     }
 
     /**
-     * Sets status
+     * Sets client_secret
      *
-     * @param string $status Статус обработки отчета на русском языке
+     * @param string $client_secret client_secret
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setClientSecret($client_secret)
     {
-        $this->container['status'] = $status;
+        $this->container['client_secret'] = $client_secret;
+
+        return $this;
+    }
+
+    /**
+     * Gets grant_type
+     *
+     * @return string
+     */
+    public function getGrantType()
+    {
+        return $this->container['grant_type'];
+    }
+
+    /**
+     * Sets grant_type
+     *
+     * @param string $grant_type grant_type
+     *
+     * @return $this
+     */
+    public function setGrantType($grant_type)
+    {
+        $this->container['grant_type'] = $grant_type;
 
         return $this;
     }

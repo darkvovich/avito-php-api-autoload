@@ -1,6 +1,6 @@
 <?php
 /**
- * ReportCollectionAutoloadInner
+ * ReportAutoloadListingFee
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ReportCollectionAutoloadInner Class Doc Comment
+ * ReportAutoloadListingFee Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
+class ReportAutoloadListingFee implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ReportCollectionAutoload_inner';
+    protected static $swaggerModelName = 'ReportAutoload_listing_fee';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,14 +56,14 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'export_success' => 'bool',
-'finished_at' => '\DateTime',
-'id' => 'int',
-'import_success' => 'bool',
-'report_status' => 'string',
-'started_at' => '\DateTime',
-'stat' => 'object',
-'status' => 'string'    ];
+        'amount' => 'float',
+'description' => 'string',
+'finish_time' => '\DateTime',
+'listing_left' => 'int',
+'listing_used' => 'int',
+'package_id' => 'int',
+'package_size' => 'int',
+'type' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,14 +71,14 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'export_success' => null,
-'finished_at' => 'date-time',
-'id' => null,
-'import_success' => null,
-'report_status' => null,
-'started_at' => 'date-time',
-'stat' => null,
-'status' => null    ];
+        'amount' => null,
+'description' => null,
+'finish_time' => 'date-time',
+'listing_left' => null,
+'listing_used' => null,
+'package_id' => null,
+'package_size' => null,
+'type' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -107,14 +107,14 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'export_success' => 'export_success',
-'finished_at' => 'finished_at',
-'id' => 'id',
-'import_success' => 'import_success',
-'report_status' => 'report_status',
-'started_at' => 'started_at',
-'stat' => 'stat',
-'status' => 'status'    ];
+        'amount' => 'amount',
+'description' => 'description',
+'finish_time' => 'finish_time',
+'listing_left' => 'listing_left',
+'listing_used' => 'listing_used',
+'package_id' => 'package_id',
+'package_size' => 'package_size',
+'type' => 'type'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -122,14 +122,14 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'export_success' => 'setExportSuccess',
-'finished_at' => 'setFinishedAt',
-'id' => 'setId',
-'import_success' => 'setImportSuccess',
-'report_status' => 'setReportStatus',
-'started_at' => 'setStartedAt',
-'stat' => 'setStat',
-'status' => 'setStatus'    ];
+        'amount' => 'setAmount',
+'description' => 'setDescription',
+'finish_time' => 'setFinishTime',
+'listing_left' => 'setListingLeft',
+'listing_used' => 'setListingUsed',
+'package_id' => 'setPackageId',
+'package_size' => 'setPackageSize',
+'type' => 'setType'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -137,14 +137,14 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'export_success' => 'getExportSuccess',
-'finished_at' => 'getFinishedAt',
-'id' => 'getId',
-'import_success' => 'getImportSuccess',
-'report_status' => 'getReportStatus',
-'started_at' => 'getStartedAt',
-'stat' => 'getStat',
-'status' => 'getStatus'    ];
+        'amount' => 'getAmount',
+'description' => 'getDescription',
+'finish_time' => 'getFinishTime',
+'listing_left' => 'getListingLeft',
+'listing_used' => 'getListingUsed',
+'package_id' => 'getPackageId',
+'package_size' => 'getPackageSize',
+'type' => 'getType'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -204,14 +204,14 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['export_success'] = isset($data['export_success']) ? $data['export_success'] : null;
-        $this->container['finished_at'] = isset($data['finished_at']) ? $data['finished_at'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['import_success'] = isset($data['import_success']) ? $data['import_success'] : null;
-        $this->container['report_status'] = isset($data['report_status']) ? $data['report_status'] : null;
-        $this->container['started_at'] = isset($data['started_at']) ? $data['started_at'] : null;
-        $this->container['stat'] = isset($data['stat']) ? $data['stat'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['finish_time'] = isset($data['finish_time']) ? $data['finish_time'] : null;
+        $this->container['listing_left'] = isset($data['listing_left']) ? $data['listing_left'] : null;
+        $this->container['listing_used'] = isset($data['listing_used']) ? $data['listing_used'] : null;
+        $this->container['package_id'] = isset($data['package_id']) ? $data['package_id'] : null;
+        $this->container['package_size'] = isset($data['package_size']) ? $data['package_size'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -223,17 +223,8 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['finished_at'] === null) {
-            $invalidProperties[] = "'finished_at' can't be null";
-        }
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['started_at'] === null) {
-            $invalidProperties[] = "'started_at' can't be null";
-        }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
         }
         return $invalidProperties;
     }
@@ -251,193 +242,193 @@ class ReportCollectionAutoloadInner implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets export_success
+     * Gets amount
      *
-     * @return bool
+     * @return float
      */
-    public function getExportSuccess()
+    public function getAmount()
     {
-        return $this->container['export_success'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets export_success
+     * Sets amount
      *
-     * @param bool $export_success Успешно ли прошла выгрузка объявления на сайте
+     * @param float $amount Сумма списания за размещение из кошелька
      *
      * @return $this
      */
-    public function setExportSuccess($export_success)
+    public function setAmount($amount)
     {
-        $this->container['export_success'] = $export_success;
+        $this->container['amount'] = $amount;
 
         return $this;
     }
 
     /**
-     * Gets finished_at
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description Описание пакета/разового размещения (при оплате из кошелька)
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets finish_time
      *
      * @return \DateTime
      */
-    public function getFinishedAt()
+    public function getFinishTime()
     {
-        return $this->container['finished_at'];
+        return $this->container['finish_time'];
     }
 
     /**
-     * Sets finished_at
+     * Sets finish_time
      *
-     * @param \DateTime $finished_at Время окончания выгрузки объявлений на сайт
+     * @param \DateTime $finish_time Время окончания пакета
      *
      * @return $this
      */
-    public function setFinishedAt($finished_at)
+    public function setFinishTime($finish_time)
     {
-        $this->container['finished_at'] = $finished_at;
+        $this->container['finish_time'] = $finish_time;
 
         return $this;
     }
 
     /**
-     * Gets id
+     * Gets listing_left
      *
      * @return int
      */
-    public function getId()
+    public function getListingLeft()
     {
-        return $this->container['id'];
+        return $this->container['listing_left'];
     }
 
     /**
-     * Sets id
+     * Sets listing_left
      *
-     * @param int $id ID отчета
+     * @param int $listing_left Cколько размещений в пакете осталось
      *
      * @return $this
      */
-    public function setId($id)
+    public function setListingLeft($listing_left)
     {
-        $this->container['id'] = $id;
+        $this->container['listing_left'] = $listing_left;
 
         return $this;
     }
 
     /**
-     * Gets import_success
+     * Gets listing_used
      *
-     * @return bool
+     * @return int
      */
-    public function getImportSuccess()
+    public function getListingUsed()
     {
-        return $this->container['import_success'];
+        return $this->container['listing_used'];
     }
 
     /**
-     * Sets import_success
+     * Sets listing_used
      *
-     * @param bool $import_success Успешно ли прошел импорт файла
+     * @param int $listing_used Cколько размещений из пакета использовано
      *
      * @return $this
      */
-    public function setImportSuccess($import_success)
+    public function setListingUsed($listing_used)
     {
-        $this->container['import_success'] = $import_success;
+        $this->container['listing_used'] = $listing_used;
 
         return $this;
     }
 
     /**
-     * Gets report_status
+     * Gets package_id
+     *
+     * @return int
+     */
+    public function getPackageId()
+    {
+        return $this->container['package_id'];
+    }
+
+    /**
+     * Sets package_id
+     *
+     * @param int $package_id id пакета
+     *
+     * @return $this
+     */
+    public function setPackageId($package_id)
+    {
+        $this->container['package_id'] = $package_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets package_size
+     *
+     * @return int
+     */
+    public function getPackageSize()
+    {
+        return $this->container['package_size'];
+    }
+
+    /**
+     * Sets package_size
+     *
+     * @param int $package_size Cколько размещений в пакете предоплачено
+     *
+     * @return $this
+     */
+    public function setPackageSize($package_size)
+    {
+        $this->container['package_size'] = $package_size;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
      *
      * @return string
      */
-    public function getReportStatus()
+    public function getType()
     {
-        return $this->container['report_status'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets report_status
+     * Sets type
      *
-     * @param string $report_status Сокращенный статус обработки отчета
+     * @param string $type Тип размещения
      *
      * @return $this
      */
-    public function setReportStatus($report_status)
+    public function setType($type)
     {
-        $this->container['report_status'] = $report_status;
-
-        return $this;
-    }
-
-    /**
-     * Gets started_at
-     *
-     * @return \DateTime
-     */
-    public function getStartedAt()
-    {
-        return $this->container['started_at'];
-    }
-
-    /**
-     * Sets started_at
-     *
-     * @param \DateTime $started_at Время создания отчета
-     *
-     * @return $this
-     */
-    public function setStartedAt($started_at)
-    {
-        $this->container['started_at'] = $started_at;
-
-        return $this;
-    }
-
-    /**
-     * Gets stat
-     *
-     * @return object
-     */
-    public function getStat()
-    {
-        return $this->container['stat'];
-    }
-
-    /**
-     * Sets stat
-     *
-     * @param object $stat Суммарная статистика по объявлению в данном отчете
-     *
-     * @return $this
-     */
-    public function setStat($stat)
-    {
-        $this->container['stat'] = $stat;
-
-        return $this;
-    }
-
-    /**
-     * Gets status
-     *
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string $status Статус обработки отчета на русском языке
-     *
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->container['status'] = $status;
+        $this->container['type'] = $type;
 
         return $this;
     }

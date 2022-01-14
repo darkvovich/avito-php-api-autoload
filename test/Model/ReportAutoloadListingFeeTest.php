@@ -1,6 +1,6 @@
 <?php
 /**
- * ReportAutoloadVasTest
+ * ReportAutoloadListingFeeTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Swagger\Client;
 
 /**
- * ReportAutoloadVasTest Class Doc Comment
+ * ReportAutoloadListingFeeTest Class Doc Comment
  *
  * @category    Class
- * @description ReportAutoloadVas
+ * @description ReportAutoloadListingFee
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ReportAutoloadVasTest extends \PHPUnit_Framework_TestCase
+class ReportAutoloadListingFeeTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,37 +69,58 @@ class ReportAutoloadVasTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ReportAutoloadVas"
+     * Test "ReportAutoloadListingFee"
      */
-    public function testReportAutoloadVas()
+    public function testReportAutoloadListingFee()
     {
     }
 
     /**
-     * Test attribute "activated"
+     * Test attribute "amount"
      */
-    public function testPropertyActivated()
+    public function testPropertyAmount()
     {
     }
 
     /**
-     * Test attribute "active"
+     * Test attribute "description"
      */
-    public function testPropertyActive()
+    public function testPropertyDescription()
     {
     }
 
     /**
-     * Test attribute "error"
+     * Test attribute "finish_time"
      */
-    public function testPropertyError()
+    public function testPropertyFinishTime()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "listing_left"
      */
-    public function testPropertyName()
+    public function testPropertyListingLeft()
+    {
+    }
+
+    /**
+     * Test attribute "listing_used"
+     */
+    public function testPropertyListingUsed()
+    {
+    }
+
+    /**
+     * Test attribute "package_id"
+     */
+    public function testPropertyPackageId()
+    {
+    }
+
+    /**
+     * Test attribute "package_size"
+     */
+    public function testPropertyPackageSize()
     {
     }
 
